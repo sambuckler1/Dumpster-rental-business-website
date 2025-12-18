@@ -100,7 +100,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section with Background Image */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-emerald-900 via-emerald-800 to-lime-900">
+      <section className="relative min-h-[70vh] sm:min-h-[80vh] md:min-h-[85vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-emerald-900 via-emerald-800 to-lime-900">
         {/* Background Image with Dark Overlay */}
         <div className="absolute inset-0 z-0">
           <div className="relative h-full w-full">
@@ -108,7 +108,7 @@ export default function Home() {
               src="/IMG_9800.jpg"
               alt="Dump trailer on job site"
               fill
-              className="object-cover"
+              className="object-cover object-center"
               unoptimized
               onError={(e) => {
                 // Hide image if it fails to load, fallback gradient will show
@@ -120,25 +120,25 @@ export default function Home() {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 mx-auto w-full max-w-6xl px-4 py-20 sm:px-8 lg:px-12">
-          <div className="max-w-2xl space-y-6 text-white">
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-400">
+        <div className="relative z-10 mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:px-12">
+          <div className="max-w-2xl space-y-4 sm:space-y-6 text-white">
+            <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-emerald-400">
               Local Dump Trailer Rental
             </p>
-            <h1 className="text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
+            <h1 className="text-3xl font-bold leading-tight tracking-tight sm:text-5xl sm:leading-tight lg:text-6xl xl:text-7xl">
               On-Time Delivery & Pickup
               <span className="block bg-gradient-to-r from-emerald-400 to-lime-300 bg-clip-text text-transparent">
                 No Job Delays
               </span>
             </h1>
-            <p className="max-w-xl text-lg leading-relaxed text-gray-100 sm:text-xl">
+            <p className="max-w-xl text-base leading-relaxed text-gray-100 sm:text-lg sm:leading-relaxed md:text-xl">
               Driveway-safe dump trailers for contractors and homeowners. 
               Same-week availability, transparent pricing, zero surprises.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Button
                 size="lg"
-                className="rounded-full bg-emerald-600 px-8 py-6 text-base font-semibold shadow-lg shadow-emerald-900/50 transition-all hover:bg-emerald-700 hover:shadow-xl hover:shadow-emerald-900/60 hover:scale-105"
+                className="w-full sm:w-auto rounded-full bg-emerald-600 px-6 py-5 text-sm sm:text-base font-semibold shadow-lg shadow-emerald-900/50 transition-all hover:bg-emerald-700 hover:shadow-xl hover:shadow-emerald-900/60 hover:scale-105 sm:px-8 sm:py-6"
                 onClick={() =>
                   document
                     .getElementById("schedule")
@@ -150,7 +150,7 @@ export default function Home() {
               <Button
                 variant="outline"
                 size="lg"
-                className="rounded-full border-2 border-white/80 bg-white/10 px-8 py-6 text-base font-semibold backdrop-blur-sm transition-all hover:bg-white/20 hover:border-white"
+                className="w-full sm:w-auto rounded-full border-2 border-white/80 bg-white/10 px-6 py-5 text-sm sm:text-base font-semibold backdrop-blur-sm transition-all hover:bg-white/20 hover:border-white sm:px-8 sm:py-6"
                 onClick={() =>
                   document
                     .getElementById("contact")
@@ -160,7 +160,7 @@ export default function Home() {
                 Contact the Owner
               </Button>
             </div>
-            <div className="flex flex-wrap gap-6 pt-4 text-sm font-medium text-gray-200">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 md:gap-6 pt-2 sm:pt-4 text-xs sm:text-sm font-medium text-gray-200">
               <span className="flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-emerald-400" />
                 Same-week availability
@@ -178,11 +178,11 @@ export default function Home() {
         </div>
       </section>
 
-      <main className="mx-auto w-full max-w-6xl px-4 sm:px-8 lg:px-12">
+      <main className="mx-auto w-full max-w-6xl px-4 sm:px-6 md:px-8 lg:px-12">
         {/* Social Proof Banner */}
-        <section className="relative -mt-16 z-20 mb-16">
+        <section className="relative -mt-12 sm:-mt-16 z-20 mb-12 sm:mb-16">
           <Card className="border-2 border-emerald-200/60 bg-gradient-to-r from-emerald-50 to-lime-50/50 shadow-xl dark:border-emerald-900/40 dark:from-emerald-950/50 dark:to-emerald-900/30">
-            <CardContent className="p-6">
+            <CardContent className="p-4 sm:p-6">
               <div className="flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700 dark:text-emerald-400">
@@ -208,16 +208,16 @@ export default function Home() {
         </section>
 
         {/* Common Projects Section */}
-        <section className="mb-20">
-          <div className="mb-8 text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+        <section className="mb-12 sm:mb-16 md:mb-20">
+          <div className="mb-6 sm:mb-8 text-center">
+            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">
               Common Projects We Handle
             </h2>
-            <p className="mt-3 text-muted-foreground">
+            <p className="mt-2 sm:mt-3 text-sm sm:text-base text-muted-foreground px-4">
               Driveway-safe drop-off & pickup for cleanouts and demolition debris
             </p>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { title: "Home & Estate Cleanouts", desc: "Furniture, household junk, storage cleanouts" },
               { title: "Renovation & Demolition Debris", desc: "Drywall, lumber, fixtures, flooring" },
@@ -225,7 +225,7 @@ export default function Home() {
               { title: "Garage, Basement & Attic Cleanouts", desc: "Bulk waste, old materials, clutter" },
             ].map((job, idx) => (
               <Card key={idx} className="border border-border/80 bg-card shadow-sm transition-all hover:shadow-md">
-                <CardContent className="p-5">
+                <CardContent className="p-4 sm:p-5">
                   <h3 className="font-semibold text-foreground">{job.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{job.desc}</p>
                 </CardContent>
@@ -235,16 +235,16 @@ export default function Home() {
         </section>
 
         {/* Why Dump Trailer vs Roll-Off Section */}
-        <section className="mb-20 rounded-2xl bg-muted/60 p-8 sm:p-12">
-          <div className="mb-8 text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+        <section className="mb-12 sm:mb-16 md:mb-20 rounded-2xl bg-muted/60 p-6 sm:p-8 md:p-12">
+          <div className="mb-6 sm:mb-8 text-center">
+            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">
               Why Choose a Dump Trailer Instead of a Roll-Off?
             </h2>
-            <p className="mt-3 text-muted-foreground">
+            <p className="mt-2 sm:mt-3 text-sm sm:text-base text-muted-foreground px-4">
               Better access, faster service, less damage
             </p>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { 
                 title: "Easier Driveway Access", 
@@ -278,11 +278,11 @@ export default function Home() {
         </section>
 
         {/* Schedule Appointment Section */}
-        <section id="schedule" className="mb-20 grid gap-8 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] md:items-start">
+        <section id="schedule" className="mb-12 sm:mb-16 md:mb-20 grid gap-6 sm:gap-8 grid-cols-1 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] md:items-start">
           <Card className="border-2 border-border/80 shadow-lg">
             <CardHeader>
-              <CardTitle className="text-2xl">Schedule a Dump Trailer</CardTitle>
-              <p className="text-sm text-muted-foreground">
+              <CardTitle className="text-xl sm:text-2xl">Schedule a Dump Trailer</CardTitle>
+              <p className="text-xs sm:text-sm text-muted-foreground">
                 On-time delivery and pickup — no job delays. Tell us what you need and we&apos;ll confirm details and pricing.
               </p>
             </CardHeader>
@@ -445,7 +445,7 @@ export default function Home() {
             </Card>
 
             {/* Image Gallery */}
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="relative aspect-square overflow-hidden rounded-lg border-2 border-border/60">
                 <Image
                   src="/IMG_9801 2.jpg"
@@ -469,11 +469,11 @@ export default function Home() {
         </section>
 
         {/* Contact Owner Section */}
-        <section id="contact" className="mb-20 grid gap-8 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] md:items-start">
+        <section id="contact" className="mb-12 sm:mb-16 md:mb-20 grid gap-6 sm:gap-8 grid-cols-1 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] md:items-start">
           <Card className="border-2 border-border/80 shadow-lg">
             <CardHeader>
-              <CardTitle className="text-2xl">Contact the Owner</CardTitle>
-              <p className="text-sm text-muted-foreground">
+              <CardTitle className="text-xl sm:text-2xl">Contact the Owner</CardTitle>
+              <p className="text-xs sm:text-sm text-muted-foreground">
                 Questions about pricing, materials, timelines, or job sites? Reach out directly.
               </p>
             </CardHeader>
@@ -566,10 +566,10 @@ export default function Home() {
         </section>
 
         {/* Service Area & Hours Card */}
-        <section className="mb-20">
+        <section className="mb-12 sm:mb-16 md:mb-20">
           <Card className="border-2 border-emerald-200/60 bg-gradient-to-br from-emerald-50 to-lime-50/50 shadow-lg dark:border-emerald-900/40 dark:from-emerald-950/50 dark:to-emerald-900/30">
             <CardHeader>
-              <CardTitle className="text-xl">Service Area & Hours</CardTitle>
+              <CardTitle className="text-lg sm:text-xl">Service Area & Hours</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3 text-sm">
               <p className="font-semibold text-foreground">Woodstock & surrounding areas</p>
