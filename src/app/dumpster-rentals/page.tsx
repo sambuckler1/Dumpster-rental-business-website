@@ -100,7 +100,7 @@ export default function DumpsterRentalsPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section with Background Image */}
-      <section className="relative min-h-[70vh] sm:min-h-[80vh] md:min-h-[85vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-emerald-900 via-emerald-800 to-lime-900">
+      <section className="relative min-h-[70vh] sm:min-h-[80vh] md:min-h-[85vh] flex items-center justify-center overflow-hidden">
         {/* Background Image with Dark Overlay */}
         <div className="absolute inset-0 z-0">
           <div className="relative h-full w-full">
@@ -115,29 +115,29 @@ export default function DumpsterRentalsPage() {
               }}
             />
           </div>
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70" />
         </div>
 
         {/* Hero Content */}
         <div className="relative z-10 mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:px-12">
-          <div className="max-w-2xl space-y-4 sm:space-y-6 text-white">
-            <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-emerald-400">
+          <div className="max-w-3xl space-y-4 sm:space-y-6 text-white">
+            <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-teal-300">
               Local Dump Trailer Rental
             </p>
             <h1 className="text-3xl font-bold leading-tight tracking-tight sm:text-5xl sm:leading-tight lg:text-6xl xl:text-7xl">
               On-Time Delivery & Pickup
-              <span className="block bg-gradient-to-r from-emerald-400 to-lime-300 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-teal-300 to-emerald-500 bg-clip-text text-transparent">
                 No Job Delays
               </span>
             </h1>
-            <p className="max-w-xl text-base leading-relaxed text-gray-100 sm:text-lg sm:leading-relaxed md:text-xl">
+            <p className="max-w-2xl text-base leading-relaxed text-gray-100 sm:text-lg sm:leading-relaxed md:text-xl">
               Driveway-safe dump trailers for contractors and homeowners. 
               Same-week availability, transparent pricing, zero surprises.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
               <Button
                 size="lg"
-                className="w-full sm:w-auto rounded-full bg-emerald-600 px-6 py-5 text-sm sm:text-base font-semibold shadow-lg shadow-emerald-900/50 transition-all hover:bg-emerald-700 hover:shadow-xl hover:shadow-emerald-900/60 hover:scale-105 sm:px-8 sm:py-6"
+                className="w-full sm:w-auto rounded-full bg-teal-600 px-6 py-5 text-sm sm:text-base font-semibold shadow-lg shadow-teal-900/50 transition-all hover:bg-teal-700 hover:shadow-xl hover:shadow-teal-900/60 hover:scale-105 sm:px-8 sm:py-6"
                 onClick={() =>
                   document
                     .getElementById("schedule")
@@ -161,15 +161,15 @@ export default function DumpsterRentalsPage() {
             </div>
             <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 md:gap-6 pt-2 sm:pt-4 text-xs sm:text-sm font-medium text-gray-200">
               <span className="flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-emerald-400" />
+                <span className="h-2 w-2 rounded-full bg-teal-300" />
                 Same-week availability
               </span>
               <span className="flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-emerald-400" />
+                <span className="h-2 w-2 rounded-full bg-teal-300" />
                 Driveway-safe equipment
               </span>
               <span className="flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-emerald-400" />
+                <span className="h-2 w-2 rounded-full bg-teal-300" />
                 Licensed & insured
               </span>
             </div>
@@ -180,11 +180,11 @@ export default function DumpsterRentalsPage() {
       <main className="mx-auto w-full max-w-6xl px-4 sm:px-6 md:px-8 lg:px-12">
         {/* Social Proof Banner */}
         <section className="relative -mt-12 sm:-mt-16 z-20 mb-12 sm:mb-16">
-          <Card className="border-2 border-emerald-200/60 bg-gradient-to-r from-emerald-50 to-lime-50/50 shadow-xl dark:border-emerald-900/40 dark:from-emerald-950/50 dark:to-emerald-900/30">
+          <Card className="border-2 border-teal-200/60 bg-gradient-to-r from-teal-50 to-emerald-100/50 shadow-xl dark:border-teal-900/40 dark:from-teal-950/50 dark:to-emerald-950/30">
             <CardContent className="p-4 sm:p-6">
               <div className="flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
                 <div>
-                  <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700 dark:text-emerald-400">
+                  <p className="text-sm font-semibold uppercase tracking-wide text-teal-700 dark:text-teal-400">
                     Trusted by Local Contractors & Homeowners
                   </p>
                   <p className="mt-1 text-sm text-muted-foreground">
@@ -193,11 +193,11 @@ export default function DumpsterRentalsPage() {
                 </div>
                 <div className="flex flex-wrap justify-center gap-6 text-sm font-medium text-foreground">
                   <div>
-                    <div className="text-2xl font-bold text-emerald-700 dark:text-emerald-400">100%</div>
+                    <div className="text-2xl font-bold text-teal-700 dark:text-teal-400">100%</div>
                     <div className="text-xs text-muted-foreground">On-Time Rate</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-emerald-700 dark:text-emerald-400">0</div>
+                    <div className="text-2xl font-bold text-teal-700 dark:text-teal-400">0</div>
                     <div className="text-xs text-muted-foreground">Surprise Fees</div>
                   </div>
                 </div>
@@ -262,9 +262,9 @@ export default function DumpsterRentalsPage() {
                 desc: "Lighter weight distribution protects driveways and asphalt better than roll-offs." 
               },
             ].map((benefit, idx) => (
-              <Card key={idx} className="border-2 border-emerald-200/40 bg-background shadow-sm">
+              <Card key={idx} className="border-2 border-teal-200/40 bg-background shadow-sm">
                 <CardHeader>
-                  <CardTitle className="text-lg text-emerald-700 dark:text-emerald-400">
+                  <CardTitle className="text-lg text-teal-700 dark:text-teal-400">
                     {benefit.title}
                   </CardTitle>
                 </CardHeader>
@@ -409,7 +409,7 @@ export default function DumpsterRentalsPage() {
                   />
                   <Button 
                     type="submit" 
-                    className="w-full rounded-full bg-emerald-600 font-semibold shadow-md transition-all hover:bg-emerald-700 hover:shadow-lg"
+                    className="w-full rounded-full bg-teal-600 font-semibold shadow-md transition-all hover:bg-teal-700 hover:shadow-lg"
                   >
                     Request Dump Trailer
                   </Button>
@@ -423,7 +423,7 @@ export default function DumpsterRentalsPage() {
 
           {/* Key info sidebar */}
           <div className="space-y-6">
-            <Card className="border-2 border-dashed border-emerald-200/60 bg-emerald-50/40 shadow-sm dark:border-emerald-900/40 dark:bg-emerald-950/30">
+            <Card className="border-2 border-dashed border-teal-200/60 bg-teal-50/40 shadow-sm dark:border-teal-900/40 dark:bg-teal-950/30">
               <CardHeader>
                 <CardTitle className="text-base">How it works</CardTitle>
               </CardHeader>
@@ -532,7 +532,7 @@ export default function DumpsterRentalsPage() {
                   />
                   <Button 
                     type="submit" 
-                    className="w-full rounded-full bg-emerald-600 font-semibold shadow-md transition-all hover:bg-emerald-700 hover:shadow-lg"
+                    className="w-full rounded-full bg-teal-600 font-semibold shadow-md transition-all hover:bg-teal-700 hover:shadow-lg"
                   >
                     Send Message
                   </Button>
@@ -551,15 +551,15 @@ export default function DumpsterRentalsPage() {
             </CardHeader>
             <CardContent className="space-y-3 text-sm text-muted-foreground">
               <p className="flex items-start gap-2">
-                <span className="font-semibold text-emerald-600 dark:text-emerald-400">•</span>
+                <span className="font-semibold text-teal-600 dark:text-teal-400">•</span>
                 <span>On-time drop-offs and pickups that keep your jobs moving—no delays, no excuses.</span>
               </p>
               <p className="flex items-start gap-2">
-                <span className="font-semibold text-emerald-600 dark:text-emerald-400">•</span>
+                <span className="font-semibold text-teal-600 dark:text-teal-400">•</span>
                 <span>Clear communication, no surprise fees, and flexible scheduling that works around your timeline.</span>
               </p>
               <p className="flex items-start gap-2">
-                <span className="font-semibold text-emerald-600 dark:text-emerald-400">•</span>
+                <span className="font-semibold text-teal-600 dark:text-teal-400">•</span>
                 <span>Respect for your property and your clients&apos; driveways—we know what matters on the job site.</span>
               </p>
             </CardContent>
@@ -568,7 +568,7 @@ export default function DumpsterRentalsPage() {
 
         {/* Service Area & Hours Card */}
         <section className="mb-12 sm:mb-16 md:mb-20">
-          <Card className="border-2 border-emerald-200/60 bg-gradient-to-br from-emerald-50 to-lime-50/50 shadow-lg dark:border-emerald-900/40 dark:from-emerald-950/50 dark:to-emerald-900/30">
+          <Card className="border-2 border-teal-200/60 bg-gradient-to-br from-teal-50 to-emerald-50/50 shadow-lg dark:border-teal-900/40 dark:from-teal-950/50 dark:to-teal-900/30">
             <CardHeader>
               <CardTitle className="text-lg sm:text-xl">Service Area & Hours</CardTitle>
             </CardHeader>
@@ -576,7 +576,7 @@ export default function DumpsterRentalsPage() {
               <p className="font-semibold text-foreground">Woodstock & surrounding areas</p>
               <p className="text-muted-foreground">Mon–Sat · 7:00am – 6:00pm</p>
               <p className="text-muted-foreground">
-                Call or text: <span className="font-semibold text-emerald-700 dark:text-emerald-400">(555) 123‑4567</span>
+                Call or text: <span className="font-semibold text-teal-700 dark:text-teal-400">(555) 123‑4567</span>
               </p>
             </CardContent>
           </Card>

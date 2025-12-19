@@ -177,7 +177,7 @@ export default function ConstructionPage() {
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:px-12">
-          <div className="max-w-3xl space-y-4 sm:space-y-6 text-white text-center">
+          <div className="max-w-3xl space-y-4 sm:space-y-6 text-white">
             <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-teal-300">
               Woodstock Renewal Contracting
             </p>
@@ -187,11 +187,11 @@ export default function ConstructionPage() {
                 & Construction Services
               </span>
             </h1>
-            <p className="max-w-2xl mx-auto text-base leading-relaxed text-gray-100 sm:text-lg sm:leading-relaxed md:text-xl">
+            <p className="max-w-2xl text-base leading-relaxed text-gray-100 sm:text-lg sm:leading-relaxed md:text-xl">
               Professional deck building, renovations, and construction services in Woodstock and surrounding areas. 
               Quality craftsmanship, transparent pricing, on-time completion.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center pt-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
               <Button
                 size="lg"
                 className="w-full sm:w-auto rounded-full bg-teal-600 px-6 py-5 text-sm sm:text-base font-semibold shadow-lg shadow-teal-900/50 transition-all hover:bg-teal-700 hover:shadow-xl hover:shadow-teal-900/60 hover:scale-105 sm:px-8 sm:py-6"
