@@ -15,6 +15,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useForm } from "react-hook-form";
+import { motion } from "framer-motion";
 
 type AppointmentFormValues = {
   name: string;
@@ -101,8 +102,13 @@ export default function DumpsterRentalsPage() {
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section with Background Image */}
       <section className="relative min-h-[70vh] sm:min-h-[80vh] md:min-h-[85vh] flex items-center justify-center overflow-hidden">
-        {/* Background Image with Dark Overlay */}
-        <div className="absolute inset-0 z-0">
+        {/* Animated Background Image */}
+        <motion.div 
+          className="absolute inset-0 z-0"
+          initial={{ scale: 1.1, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+        >
           <div className="relative h-full w-full">
             <Image
               src="/IMG_9800.jpg"
@@ -115,51 +121,122 @@ export default function DumpsterRentalsPage() {
               }}
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70" />
-        </div>
+          <motion.div 
+            className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          />
+        </motion.div>
 
-        {/* Hero Content */}
+        {/* Animated Hero Content */}
         <div className="relative z-10 mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:px-12">
-          <div className="max-w-3xl space-y-4 sm:space-y-6 text-white">
-            <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-teal-300">
+          <motion.div 
+            className="max-w-3xl space-y-4 sm:space-y-6 text-white"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              visible: {
+                transition: {
+                  staggerChildren: 0.15,
+                  delayChildren: 0.3,
+                },
+              },
+            }}
+          >
+            <motion.p 
+              className="text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-teal-300"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
               Local Dump Trailer Rental
-            </p>
-            <h1 className="text-3xl font-bold leading-tight tracking-tight sm:text-5xl sm:leading-tight lg:text-6xl xl:text-7xl">
+            </motion.p>
+            <motion.h1 
+              className="text-3xl font-bold leading-tight tracking-tight sm:text-5xl sm:leading-tight lg:text-6xl xl:text-7xl"
+              variants={{
+                hidden: { opacity: 0, y: 40 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
               On-Time Delivery & Pickup
-              <span className="block bg-gradient-to-r from-teal-300 to-emerald-500 bg-clip-text text-transparent">
+              <motion.span 
+                className="block bg-gradient-to-r from-teal-300 to-emerald-500 bg-clip-text text-transparent"
+                variants={{
+                  hidden: { opacity: 0, y: 40 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+              >
                 No Job Delays
-              </span>
-            </h1>
-            <p className="max-w-2xl text-base leading-relaxed text-gray-100 sm:text-lg sm:leading-relaxed md:text-xl">
+              </motion.span>
+            </motion.h1>
+            <motion.p 
+              className="max-w-2xl text-base leading-relaxed text-gray-100 sm:text-lg sm:leading-relaxed md:text-xl"
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
               Driveway-safe dump trailers for contractors and homeowners. 
               Same-week availability, transparent pricing, zero surprises.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
-              <Button
-                size="lg"
-                className="w-full sm:w-auto rounded-full bg-teal-600 px-6 py-5 text-sm sm:text-base font-semibold shadow-lg shadow-teal-900/50 transition-all hover:bg-teal-700 hover:shadow-xl hover:shadow-teal-900/60 hover:scale-105 sm:px-8 sm:py-6"
-                onClick={() =>
-                  document
-                    .getElementById("schedule")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
+            </motion.p>
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4"
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                Schedule a Dump Trailer
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="w-full sm:w-auto rounded-full border-2 border-white/80 bg-white/10 px-6 py-5 text-sm sm:text-base font-semibold backdrop-blur-sm transition-all hover:bg-white/20 hover:border-white sm:px-8 sm:py-6"
-                onClick={() =>
-                  document
-                    .getElementById("contact")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
+                <Button
+                  size="lg"
+                  className="w-full sm:w-auto rounded-full bg-teal-600 px-6 py-5 text-sm sm:text-base font-semibold shadow-lg shadow-teal-900/50 transition-all hover:bg-teal-700 hover:shadow-xl hover:shadow-teal-900/60 sm:px-8 sm:py-6"
+                  onClick={() =>
+                    document
+                      .getElementById("schedule")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                >
+                  Schedule a Dump Trailer
+                </Button>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                Contact the Owner
-              </Button>
-            </div>
-            <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 md:gap-6 pt-2 sm:pt-4 text-xs sm:text-sm font-medium text-gray-200">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="w-full sm:w-auto rounded-full border-2 border-white/80 bg-white/10 px-6 py-5 text-sm sm:text-base font-semibold backdrop-blur-sm transition-all hover:bg-white/20 hover:border-white sm:px-8 sm:py-6"
+                  onClick={() =>
+                    document
+                      .getElementById("contact")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                >
+                  Contact the Owner
+                </Button>
+              </motion.div>
+            </motion.div>
+            <motion.div 
+              className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 md:gap-6 pt-2 sm:pt-4 text-xs sm:text-sm font-medium text-gray-200"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            >
               <span className="flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-teal-300" />
                 Same-week availability
@@ -172,8 +249,8 @@ export default function DumpsterRentalsPage() {
                 <span className="h-2 w-2 rounded-full bg-teal-300" />
                 Licensed & insured
               </span>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
@@ -208,42 +285,87 @@ export default function DumpsterRentalsPage() {
 
         {/* Common Projects Section */}
         <section className="mb-12 sm:mb-16 md:mb-20">
-          <div className="mb-6 sm:mb-8 text-center">
+          <motion.div 
+            className="mb-6 sm:mb-8 text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">
               Common Projects We Handle
             </h2>
             <p className="mt-2 sm:mt-3 text-sm sm:text-base text-muted-foreground px-4">
               Driveway-safe drop-off & pickup for cleanouts and demolition debris
             </p>
-          </div>
-          <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          </motion.div>
+          <motion.div 
+            className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={{
+              visible: {
+                transition: {
+                  staggerChildren: 0.1,
+                },
+              },
+            }}
+          >
             {[
               { title: "Home & Estate Cleanouts", desc: "Furniture, household junk, storage cleanouts" },
               { title: "Renovation & Demolition Debris", desc: "Drywall, lumber, fixtures, flooring" },
               { title: "Contractor Job Sites", desc: "Remodels, tear-outs, ongoing projects" },
               { title: "Garage, Basement & Attic Cleanouts", desc: "Bulk waste, old materials, clutter" },
             ].map((job, idx) => (
-              <Card key={idx} className="border border-border/80 bg-card shadow-sm transition-all hover:shadow-md">
-                <CardContent className="p-4 sm:p-5">
-                  <h3 className="font-semibold text-foreground">{job.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{job.desc}</p>
-                </CardContent>
-              </Card>
+              <motion.div
+                key={idx}
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+              >
+                <Card className="border border-border/80 bg-card shadow-sm transition-all hover:shadow-md">
+                  <CardContent className="p-4 sm:p-5">
+                    <h3 className="font-semibold text-foreground">{job.title}</h3>
+                    <p className="mt-2 text-sm text-muted-foreground">{job.desc}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </section>
 
         {/* Why Dump Trailer vs Roll-Off Section */}
         <section className="mb-12 sm:mb-16 md:mb-20 rounded-2xl bg-muted/60 p-6 sm:p-8 md:p-12">
-          <div className="mb-6 sm:mb-8 text-center">
+          <motion.div 
+            className="mb-6 sm:mb-8 text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">
               Why Choose a Dump Trailer Instead of a Roll-Off?
             </h2>
             <p className="mt-2 sm:mt-3 text-sm sm:text-base text-muted-foreground px-4">
               Better access, faster service, less damage
             </p>
-          </div>
-          <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          </motion.div>
+          <motion.div 
+            className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={{
+              visible: {
+                transition: {
+                  staggerChildren: 0.1,
+                },
+              },
+            }}
+          >
             {[
               { 
                 title: "Easier Driveway Access", 
@@ -262,18 +384,27 @@ export default function DumpsterRentalsPage() {
                 desc: "Lighter weight distribution protects driveways and asphalt better than roll-offs." 
               },
             ].map((benefit, idx) => (
-              <Card key={idx} className="border-2 border-teal-200/40 bg-background shadow-sm">
-                <CardHeader>
-                  <CardTitle className="text-lg text-teal-700 dark:text-teal-400">
-                    {benefit.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">{benefit.desc}</p>
-                </CardContent>
-              </Card>
+              <motion.div
+                key={idx}
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+              >
+                <Card className="border-2 border-teal-200/40 bg-background shadow-sm">
+                  <CardHeader>
+                    <CardTitle className="text-lg text-teal-700 dark:text-teal-400">
+                      {benefit.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground">{benefit.desc}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </section>
 
         {/* Schedule Appointment Section */}
@@ -407,12 +538,18 @@ export default function DumpsterRentalsPage() {
                       </FormItem>
                     )}
                   />
-                  <Button 
-                    type="submit" 
-                    className="w-full rounded-full bg-teal-600 font-semibold shadow-md transition-all hover:bg-teal-700 hover:shadow-lg"
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
                   >
-                    Request Dump Trailer
-                  </Button>
+                    <Button 
+                      type="submit" 
+                      className="w-full rounded-full bg-teal-600 font-semibold shadow-md transition-all hover:bg-teal-700 hover:shadow-lg"
+                    >
+                      Request Dump Trailer
+                    </Button>
+                  </motion.div>
                   <p className="text-xs text-muted-foreground">
                     No payment due yet. We&apos;ll call or text to confirm availability, pricing, and your drop-off window.
                   </p>
@@ -530,12 +667,18 @@ export default function DumpsterRentalsPage() {
                       </FormItem>
                     )}
                   />
-                  <Button 
-                    type="submit" 
-                    className="w-full rounded-full bg-teal-600 font-semibold shadow-md transition-all hover:bg-teal-700 hover:shadow-lg"
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
                   >
-                    Send Message
-                  </Button>
+                    <Button 
+                      type="submit" 
+                      className="w-full rounded-full bg-teal-600 font-semibold shadow-md transition-all hover:bg-teal-700 hover:shadow-lg"
+                    >
+                      Send Message
+                    </Button>
+                  </motion.div>
                   <p className="text-xs text-muted-foreground">
                     Prefer a call? Dial{" "}
                     <span className="font-semibold text-foreground">(555) 123‑4567</span>.
